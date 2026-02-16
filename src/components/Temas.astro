@@ -1,0 +1,51 @@
+---
+const CTA_LINK = "#oferta";
+
+const temas = [
+  { emoji: "❤️", titulo: "Amor ao Próximo", desc: "100 parábolas — Ensina a amar como Jesus amou" },
+  { emoji: "✝️", titulo: "Fé e Confiança em Deus", desc: "100 parábolas — Fortalece a confiança em Deus" },
+  { emoji: "📖", titulo: "Obediência e Sabedoria", desc: "100 parábolas — Sabedoria começa com obediência" },
+  { emoji: "🕊️", titulo: "Perdão e Misericórdia", desc: "100 parábolas — O poder do perdão na vida da criança" },
+  { emoji: "🙏", titulo: "Gratidão e Louvor", desc: "100 parábolas — Transforma reclamação em louvor" },
+  { emoji: "🦁", titulo: "Coragem com Jesus", desc: "100 parábolas — Confiar em Jesus mesmo com medo" },
+  { emoji: "🤲", titulo: "Bondade e Generosidade", desc: "100 parábolas — Plantar a vontade de ser bênção" },
+  { emoji: "🎓", titulo: "Respeito e Educação", desc: "100 parábolas — Tratar todos com dignidade" },
+  { emoji: "🌅", titulo: "Esperança e Renovação", desc: "100 parábolas — Cada dia é uma chance nova com Deus" },
+  { emoji: "💛", titulo: "Compaixão e Solidariedade", desc: "100 parábolas — Enxergar a dor do outro" },
+  { emoji: "⏳", titulo: "Paciência e Perseverança", desc: "100 parábolas — Esperar em Deus vale a pena" },
+  { emoji: "⚖️", titulo: "Honestidade e Verdade", desc: "100 parábolas — Viver com integridade diante de Deus" },
+];
+---
+
+<section class="bg-cream-dark px-5 py-10 sm:px-8 md:py-14">
+  <h2 class="mb-8 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+    📖 São 12 Temas Bíblicos Essenciais — <span class="text-green">100 Parábolas em Cada Um</span>
+  </h2>
+
+  <div class="mx-auto grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+    {temas.map((tema) => (
+      <div class="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm transition-transform hover:scale-[1.02] sm:p-5">
+        <span class="shrink-0 text-3xl sm:text-4xl">{tema.emoji}</span>
+        <div>
+          <h3 class="text-base font-bold text-brown-dark sm:text-lg">{tema.titulo}</h3>
+          <p class="mt-0.5 text-sm text-brown-light sm:text-base">{tema.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Texto âncora -->
+  <p class="mx-auto mt-8 max-w-lg text-center text-base font-semibold text-brown sm:text-lg">
+    São <strong>1.200 parábolas no total</strong> — material suficiente pra <span class="text-green font-bold">mais de 3 anos</span> de devocional diário.
+  </p>
+
+  <!-- CTA -->
+  <div class="mt-6 text-center">
+    <a
+      href={CTA_LINK}
+      class="inline-block w-full max-w-sm rounded-2xl bg-cta px-8 py-4 text-base font-bold text-white uppercase shadow-[0_6px_20px_rgba(37,211,102,0.4)] transition-all hover:bg-cta-dark hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] active:scale-95 sm:text-lg"
+    >
+      QUERO TODOS OS 12 TEMAS AGORA!
+    </a>
+  </div>
+</section>

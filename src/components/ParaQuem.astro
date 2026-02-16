@@ -1,0 +1,49 @@
+---
+const sim = [
+  "Você é mãe, avó, tia ou madrinha e quer ensinar valores cristãos pra criança de um jeito simples e carinhoso",
+  "Você sente que a Bíblia é difícil demais pra explicar pra uma criança e precisa de um material que traduza os ensinamentos",
+  "Você é professora de escola dominical, catequista ou líder de ministério infantil e precisa de conteúdo organizado e pronto",
+  "Você quer criar o hábito do devocional em família mas não sabe por onde começar",
+  "Você se preocupa com a influência do mundo na vida dos seus filhos/netos e quer blindar o coração deles com a Palavra de Deus",
+];
+
+const nao = [
+  "Você acredita que criança aprende sozinha sobre fé e não precisa de orientação",
+  "Você quer um material acadêmico ou teológico avançado — este é feito com linguagem simples e amorosa, para crianças de 4 a 12 anos",
+  "Você não pretende dedicar nem 5 minutinhos por dia pra um momento com a criança e com Deus",
+];
+---
+
+<section class="bg-cream px-5 py-10 sm:px-8 md:py-14">
+  <div class="mx-auto max-w-2xl">
+    <!-- Para quem É -->
+    <div class="mb-8">
+      <h2 class="mb-6 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+        Este material é pra você se...
+      </h2>
+      <div class="space-y-3">
+        {sim.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl bg-green/5 p-4 sm:p-5">
+            <span class="shrink-0 text-xl text-green">✅</span>
+            <p class="text-sm leading-relaxed text-brown sm:text-base">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Para quem NÃO é -->
+    <div>
+      <h2 class="mb-6 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+        Este material NÃO é pra você se...
+      </h2>
+      <div class="space-y-3">
+        {nao.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl bg-red-price/5 p-4 sm:p-5">
+            <span class="shrink-0 text-xl text-red-price">❌</span>
+            <p class="text-sm leading-relaxed text-brown sm:text-base">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

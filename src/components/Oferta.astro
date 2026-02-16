@@ -1,0 +1,195 @@
+---
+const CTA_LINK = "#"; // link de checkout
+---
+
+<section id="oferta" class="bg-cream-dark px-5 py-10 sm:px-8 md:py-14">
+  <div class="mx-auto max-w-lg">
+    <!-- Card da oferta -->
+    <div class="overflow-hidden rounded-3xl bg-white shadow-lg">
+      <!-- Header -->
+      <div class="bg-green px-6 py-5 text-center sm:py-6">
+        <p class="text-base font-bold text-white sm:text-lg">COMPRANDO HOJE, VOCÊ LEVA:</p>
+      </div>
+
+      <!-- Corpo -->
+      <div class="px-6 py-8 text-center sm:px-8">
+
+        <!-- COUNTDOWN TIMER -->
+        <div class="mb-6 rounded-xl bg-red-price/5 p-4">
+          <p class="mb-2 text-xs font-semibold tracking-wider text-red-price uppercase sm:text-sm">⏰ Esta oferta expira em:</p>
+          <div class="flex items-center justify-center gap-2" id="countdown">
+            <div class="flex flex-col items-center">
+              <span class="block w-14 rounded-lg bg-red-price py-2 text-2xl font-extrabold text-white sm:w-16 sm:text-3xl" id="cd-hours">02</span>
+              <span class="mt-1 text-[10px] text-brown-light uppercase">Horas</span>
+            </div>
+            <span class="text-2xl font-bold text-red-price">:</span>
+            <div class="flex flex-col items-center">
+              <span class="block w-14 rounded-lg bg-red-price py-2 text-2xl font-extrabold text-white sm:w-16 sm:text-3xl" id="cd-mins">00</span>
+              <span class="mt-1 text-[10px] text-brown-light uppercase">Min</span>
+            </div>
+            <span class="text-2xl font-bold text-red-price">:</span>
+            <div class="flex flex-col items-center">
+              <span class="block w-14 rounded-lg bg-red-price py-2 text-2xl font-extrabold text-white sm:w-16 sm:text-3xl" id="cd-secs">00</span>
+              <span class="mt-1 text-[10px] text-brown-light uppercase">Seg</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROVA SOCIAL EM TEMPO REAL -->
+        <div class="mb-6 rounded-xl bg-cream-dark p-4">
+          <p class="mb-2 text-sm font-bold text-brown-dark sm:text-base">
+            🔥 <span id="compras-recentes">47</span> pessoas compraram nas últimas horas
+          </p>
+          <div class="h-3 w-full overflow-hidden rounded-full bg-cream">
+            <div class="h-full rounded-full bg-gradient-to-r from-green to-cta transition-all duration-1000" id="barra-compras" style="width: 47%"></div>
+          </div>
+          <p class="mt-1 text-xs text-brown-light" id="texto-preco">⚠️ O preço sobe para R$67 quando atingir 100 vendas hoje</p>
+        </div>
+
+        <!-- Checklist resumo -->
+        <ul class="mb-6 space-y-2 text-left text-sm sm:text-base">
+          <li class="flex items-start gap-2"><span class="text-green">✅</span> 1.200 Parábolas Cristãs Kids (12 temas x 100)</li>
+          <li class="flex items-start gap-2"><span class="text-green">✅</span> 7 elementos completos em cada parábola</li>
+          <li class="flex items-start gap-2"><span class="text-green">✅</span> PDF + Canva Editável</li>
+          <li class="flex items-start gap-2"><span class="text-green">✅</span> Acesso vitalício + atualizações futuras</li>
+          <li class="flex items-start gap-2"><span class="text-green">✅</span> +6 Bônus exclusivos GRÁTIS</li>
+          <li class="flex items-start gap-2"><span class="text-green">✅</span> Garantia incondicional de 30 dias</li>
+        </ul>
+
+        <!-- Preço -->
+        <div class="mb-6">
+          <p class="text-base text-brown-light sm:text-lg">
+            DE <span class="text-lg font-bold text-red-price line-through sm:text-xl">R$397,00</span>
+          </p>
+          <p class="mt-1 text-sm text-brown-light">POR APENAS</p>
+          <p class="mt-2 text-4xl font-extrabold text-green sm:text-5xl">
+            R$37
+          </p>
+          <p class="mt-1 text-sm text-brown-light sm:text-base">
+            ou até <strong>8x de R$5,38</strong> no cartão
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <a
+          href={CTA_LINK}
+          class="animate-pulse-cta block w-full rounded-2xl bg-cta px-6 py-5 text-lg font-bold tracking-wide text-white uppercase shadow-[0_6px_20px_rgba(37,211,102,0.4)] transition-all hover:bg-cta-dark hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] active:scale-95 sm:text-xl"
+        >
+          SIM! QUERO ACESSAR TUDO AGORA POR R$37!
+        </a>
+
+        <!-- Urgência -->
+        <p class="mt-4 text-sm font-semibold text-red-price sm:text-base">
+          ⚠️ Oferta termina hoje, <span class="data-hoje"></span>!
+        </p>
+
+        <!-- Selos de segurança -->
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-brown-light sm:text-sm">
+          <span>🔒 Compra 100% segura</span>
+          <span>|</span>
+          <span>💳 Pix, Cartão, Boleto</span>
+          <span>|</span>
+          <span>📱 Acesso imediato</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ── Data dinâmica ──
+  const els = document.querySelectorAll('.data-hoje');
+  const hoje = new Date();
+  const d = String(hoje.getDate()).padStart(2, '0');
+  const m = String(hoje.getMonth() + 1).padStart(2, '0');
+  const y = hoje.getFullYear();
+  els.forEach(el => el.textContent = `${d}/${m}/${y}`);
+
+  // ── Countdown Timer ──
+  // Expira no fim do dia de hoje (23:59:59) — reseta todo dia
+  function startCountdown() {
+    const hoursEl = document.getElementById('cd-hours');
+    const minsEl = document.getElementById('cd-mins');
+    const secsEl = document.getElementById('cd-secs');
+    if (!hoursEl || !minsEl || !secsEl) return;
+
+    // Checa se o user já tem um deadline salvo
+    const storageKey = 'sdf_cd_deadline';
+    let deadline = localStorage.getItem(storageKey);
+
+    if (!deadline || Number(deadline) < Date.now()) {
+      // Seta deadline para daqui a 2h + random 0-30min (parecer mais real)
+      const offset = 2 * 60 * 60 * 1000 + Math.floor(Math.random() * 30 * 60 * 1000);
+      deadline = String(Date.now() + offset);
+      localStorage.setItem(storageKey, deadline);
+    }
+
+    function tick() {
+      const diff = Math.max(0, Number(deadline) - Date.now());
+      const h = Math.floor(diff / 3600000);
+      const mn = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      hoursEl.textContent = String(h).padStart(2, '0');
+      minsEl.textContent = String(mn).padStart(2, '0');
+      secsEl.textContent = String(s).padStart(2, '0');
+
+      if (diff <= 0) {
+        // Reset: novo ciclo de 2h
+        const offset = 2 * 60 * 60 * 1000 + Math.floor(Math.random() * 30 * 60 * 1000);
+        deadline = String(Date.now() + offset);
+        localStorage.setItem(storageKey, deadline);
+      }
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  // ── Prova social em tempo real ──
+  function startProvasSocial() {
+    const comprasEl = document.getElementById('compras-recentes');
+    const barraEl = document.getElementById('barra-compras');
+    const textoEl = document.getElementById('texto-preco');
+    if (!comprasEl || !barraEl) return;
+
+    const storageKey = 'sdf_compras';
+    const tsKey = 'sdf_compras_ts';
+    let compras = localStorage.getItem(storageKey);
+    const lastTs = localStorage.getItem(tsKey);
+
+    // Reseta se não existe ou se já passou mais de 3h (simula novo ciclo diário)
+    if (!compras || !lastTs || (Date.now() - Number(lastTs)) > 3 * 60 * 60 * 1000) {
+      // Começa entre 38 e 52 compras
+      compras = String(Math.floor(Math.random() * 15) + 38);
+      localStorage.setItem(storageKey, compras);
+      localStorage.setItem(tsKey, String(Date.now()));
+    }
+
+    const c = Number(compras);
+    comprasEl.textContent = String(c);
+    barraEl.style.width = `${c}%`;
+    if (textoEl) textoEl.textContent = `⚠️ O preço sobe para R$67 quando atingir 100 vendas hoje`;
+
+    // A cada 45-120s, +1 compra (simula vendas acontecendo)
+    function novaCompra() {
+      const current = Number(localStorage.getItem(storageKey) || c);
+      if (current < 94) {
+        const novo = current + 1;
+        localStorage.setItem(storageKey, String(novo));
+        comprasEl.textContent = String(novo);
+        barraEl.style.width = `${novo}%`;
+        if (textoEl) {
+          const faltam = 100 - novo;
+          textoEl.textContent = `⚠️ Faltam só ${faltam} vendas para o preço subir para R$67`;
+        }
+      }
+      const next = (Math.random() * 75 + 45) * 1000;
+      setTimeout(novaCompra, next);
+    }
+
+    setTimeout(novaCompra, (Math.random() * 75 + 45) * 1000);
+  }
+
+  startCountdown();
+  startProvasSocial();
+</script>

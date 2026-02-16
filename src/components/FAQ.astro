@@ -1,0 +1,66 @@
+---
+const perguntas = [
+  {
+    q: "O material é físico ou digital?",
+    a: "100% digital. PDF + Canva editável. Use no celular, imprima, edite como quiser.",
+  },
+  {
+    q: "Como recebo o acesso?",
+    a: "Após o pagamento (Pix em segundos!), você recebe um e-mail com o link de acesso. Só clicar e baixar.",
+  },
+  {
+    q: "Preciso entender a Bíblia pra usar?",
+    a: "De jeito nenhum! Cada parábola já vem pronta com tudo. Só abrir e usar.",
+  },
+  {
+    q: "Qual a faixa etária indicada?",
+    a: "Crianças de 4 a 12 anos. Menores podem acompanhar com ajuda de um adulto.",
+  },
+  {
+    q: "Posso usar na igreja ou escola dominical?",
+    a: "Sim! Muitas professoras já estão usando. Organizado por temas, com atividades prontas.",
+  },
+  {
+    q: "Posso imprimir?",
+    a: "Sim! PDF com qualidade de impressão. Imprima quantas vezes quiser.",
+  },
+  {
+    q: "O acesso é vitalício?",
+    a: "Sim. Uma vez, seu pra sempre. Sem mensalidade. Atualizações futuras grátis.",
+  },
+  {
+    q: "E se eu não gostar?",
+    a: "30 dias de garantia incondicional. Devolvemos 100% sem perguntas.",
+  },
+  {
+    q: "Posso editar o material?",
+    a: "Sim! Canva editável — personalize cores, adicione nome da igreja, adapte.",
+  },
+  {
+    q: "É seguro comprar?",
+    a: "Totalmente. Pagamento com criptografia SSL. Pix, cartão (8x) e boleto.",
+  },
+];
+---
+
+<section class="bg-cream-dark px-5 py-10 sm:px-8 md:py-14">
+  <h2 class="mb-8 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+    🤔 Perguntas que outras mães fizeram antes de garantir o acesso:
+  </h2>
+
+  <div class="mx-auto max-w-lg space-y-3">
+    {perguntas.map((p) => (
+      <details class="group rounded-xl bg-white shadow-sm">
+        <summary class="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-brown-dark sm:text-base">
+          <span class="pr-4">{p.q}</span>
+          <span class="shrink-0 text-lg text-brown-light transition-transform group-open:rotate-180">
+            ▼
+          </span>
+        </summary>
+        <div class="px-5 pb-4 text-sm leading-relaxed text-brown-light sm:text-base">
+          {p.a}
+        </div>
+      </details>
+    ))}
+  </div>
+</section>

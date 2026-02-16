@@ -1,0 +1,74 @@
+---
+const CTA_LINK = "#oferta";
+
+const dores = [
+  {
+    emoji: "😰",
+    texto: 'Você abre a Bíblia e pensa: "Meu Deus, como eu explico Levítico pra uma criança de 5 anos?" Os versículos são profundos demais, a linguagem é difícil, e você fica com medo de falar algo errado.',
+  },
+  {
+    emoji: "📱",
+    texto: "Você olha o seu filho grudado no celular, assistindo vídeos que você nem sabe o que são, e sente aquele aperto no coração — porque o mundo tá chegando cada vez mais cedo.",
+  },
+  {
+    emoji: "😔",
+    texto: 'Você vê outras mães da igreja ensinando os filhos com tanta naturalidade e se pergunta: "O que eu tô fazendo de errado?" E vem aquele peso... aquela sensação de que tá falhando como mãe cristã.',
+  },
+  {
+    emoji: "📖",
+    texto: "Você até já tentou. Comprou uma Bíblia infantil, tentou ler antes de dormir... mas a criança se dispersou, pediu pra ver desenho, e você ficou ali, sozinha, com o livro aberto no colo.",
+  },
+  {
+    emoji: "💔",
+    texto: 'E no fundo, o que mais te assusta é pensar: "E se meu filho crescer sem fé? E se ele se afastar de Deus porque eu não soube mostrar o caminho a tempo?"',
+  },
+];
+---
+
+<section class="bg-cream px-5 py-10 sm:px-8 md:py-14">
+  <div class="mx-auto max-w-2xl">
+    <!-- Título -->
+    <h2 class="mb-2 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+      Você sente isso no peito, não sente?
+    </h2>
+    <p class="mx-auto mb-8 max-w-lg text-center text-sm leading-relaxed text-brown-light sm:text-base">
+      Aquela vontade enorme de ensinar seu filho — ou seu neto — sobre Deus, sobre Jesus, sobre o que realmente importa nessa vida... Mas na hora de sentar com a criança e abrir a Bíblia, parece que as palavras travam.
+    </p>
+
+    <!-- Bullets de dor -->
+    <div class="space-y-4">
+      {dores.map((dor) => (
+        <div class="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm sm:p-5">
+          <span class="shrink-0 text-2xl sm:text-3xl">{dor.emoji}</span>
+          <p class="text-sm leading-relaxed text-brown sm:text-base">{dor.texto}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Transição -->
+    <div class="mt-8 text-center">
+      <p class="text-base text-brown-light sm:text-lg">
+        Se você se identificou com pelo menos uma dessas situações, pode respirar aliviada.
+      </p>
+      <p class="mt-3 text-base text-brown-light sm:text-lg">
+        Porque a culpa <strong class="text-brown-dark">não é sua</strong>.
+      </p>
+      <p class="mt-3 text-sm text-brown-light sm:text-base">
+        A Bíblia não foi escrita para crianças. Ninguém nunca te ensinou a traduzir a Palavra de Deus numa linguagem que uma criança entende, abraça e quer viver.
+      </p>
+      <p class="mt-4 text-xl font-extrabold text-green sm:text-2xl">
+        Até agora.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-8 text-center">
+      <a
+        href={CTA_LINK}
+        class="inline-block w-full max-w-sm rounded-2xl bg-cta px-8 py-4 text-base font-bold text-white uppercase shadow-[0_6px_20px_rgba(37,211,102,0.4)] transition-all hover:bg-cta-dark hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] active:scale-95 sm:text-lg"
+      >
+        QUERO A SOLUÇÃO AGORA!
+      </a>
+    </div>
+  </div>
+</section>

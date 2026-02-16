@@ -1,0 +1,28 @@
+---
+const avatars = ["👩", "👨", "👩‍🦱", "👨‍🦳", "👩‍🦰"];
+---
+
+<section class="bg-cream-dark px-5 py-10 text-center sm:px-8 md:py-14">
+  <!-- Estrelas -->
+  <div class="flex items-center justify-center gap-1 text-3xl sm:text-4xl">
+    <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+  </div>
+
+  <!-- Avatares -->
+  <div class="mt-4 flex items-center justify-center -space-x-3">
+    {avatars.map((emoji) => (
+      <div class="flex h-12 w-12 items-center justify-center rounded-full border-3 border-cream-dark bg-white text-2xl shadow-sm sm:h-14 sm:w-14 sm:text-3xl">
+        {emoji}
+      </div>
+    ))}
+  </div>
+
+  <!-- Número -->
+  <p class="mt-4 text-2xl font-bold text-brown-dark sm:text-3xl">
+    +2.000 famílias já estão usando
+  </p>
+
+  <p class="mt-2 text-sm text-brown-light sm:text-base">
+    Mães, avós e professoras plantando a semente da fé todos os dias
+  </p>
+</section>
