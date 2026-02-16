@@ -41,6 +41,15 @@ const { title } = Astro.props;
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=785138876820002&ev=PageView&noscript=1"/>
   </noscript>
 
+  <!-- UTMify Tracking Script -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
   <style>
     @keyframes pulse-cta {
       0%, 100% { transform: scale(1); }
@@ -60,5 +69,27 @@ const { title } = Astro.props;
 </head>
 <body class="min-h-screen">
   <slot />
+
+  <!-- Back Redirect Script (UTMify) -->
+  <script>
+    const link = 'https://gs-produtos-digitais.pay.yampi.com.br/pay/SGPQ4CF7MQ';
+    function setBackRedirect(url) {
+      let urlBackRedirect = url;
+      urlBackRedirect = urlBackRedirect =
+        urlBackRedirect.trim() +
+        (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+        document.location.search.replace('?', '').toString();
+      history.pushState({}, '', location.href);
+      history.pushState({}, '', location.href);
+      history.pushState({}, '', location.href);
+      window.addEventListener('popstate', () => {
+        console.log('onpopstate', urlBackRedirect);
+        setTimeout(() => {
+          location.href = urlBackRedirect;
+        }, 1);
+      });
+    }
+    setBackRedirect(link);
+  </script>
 </body>
 </html>
