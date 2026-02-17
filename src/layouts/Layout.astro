@@ -79,10 +79,12 @@ const { title } = Astro.props;
         urlBackRedirect.trim() +
         (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
         document.location.search.replace('?', '').toString();
-      history.pushState({}, '', location.href);
-      history.pushState({}, '', location.href);
-      history.pushState({}, '', location.href);
-      window.addEventListener('popstate', () => {
+      history.pushState({ backRedirect: true }, '', location.href);
+      history.pushState({ backRedirect: true }, '', location.href);
+      history.pushState({ backRedirect: true }, '', location.href);
+      window.addEventListener('popstate', (e) => {
+        // Só redireciona se for botão "voltar" real, não navegação de âncora
+        if (location.hash) return;
         console.log('onpopstate', urlBackRedirect);
         setTimeout(() => {
           location.href = urlBackRedirect;
