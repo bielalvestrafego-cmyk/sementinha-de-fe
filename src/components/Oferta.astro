@@ -43,7 +43,7 @@ const CTA_LINK = "https://gs-produtos-digitais.pay.yampi.com.br/pay/SGPQ4CF7MQ";
           <div class="h-3 w-full overflow-hidden rounded-full bg-cream">
             <div class="h-full rounded-full bg-gradient-to-r from-green to-cta transition-all duration-1000" id="barra-compras" style="width: 47%"></div>
           </div>
-          <p class="mt-1 text-xs text-brown-light" id="texto-preco">⚠️ O preço sobe para R$67 quando atingir 100 vendas hoje</p>
+          <p class="mt-1 text-xs text-brown-light" id="texto-preco">⚠️ O preço sobe para R$97 quando atingir 100 vendas hoje</p>
         </div>
 
         <!-- Checklist resumo -->
@@ -63,10 +63,10 @@ const CTA_LINK = "https://gs-produtos-digitais.pay.yampi.com.br/pay/SGPQ4CF7MQ";
           </p>
           <p class="mt-1 text-sm text-brown-light">POR APENAS</p>
           <p class="mt-2 text-4xl font-extrabold text-green sm:text-5xl">
-            R$37
+            R$46,99
           </p>
           <p class="mt-1 text-sm text-brown-light sm:text-base">
-            ou até <strong>8x de R$5,38</strong> no cartão
+            ou até <strong>8x de R$6,79</strong> no cartão
           </p>
         </div>
 
@@ -75,7 +75,7 @@ const CTA_LINK = "https://gs-produtos-digitais.pay.yampi.com.br/pay/SGPQ4CF7MQ";
           href={CTA_LINK}
           class="animate-pulse-cta block w-full rounded-2xl bg-cta px-6 py-5 text-lg font-bold tracking-wide text-white uppercase shadow-[0_6px_20px_rgba(37,211,102,0.4)] transition-all hover:bg-cta-dark hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] active:scale-95 sm:text-xl"
         >
-          SIM! QUERO ACESSAR TUDO AGORA POR R$37!
+          SIM! QUERO ACESSAR TUDO AGORA POR R$46,99!
         </a>
 
         <!-- Urgência -->
@@ -175,7 +175,7 @@ const CTA_LINK = "https://gs-produtos-digitais.pay.yampi.com.br/pay/SGPQ4CF7MQ";
     const c = Number(compras);
     comprasEl.textContent = String(c);
     barraEl.style.width = `${c}%`;
-    if (textoEl) textoEl.textContent = `⚠️ O preço sobe para R$67 quando atingir 100 vendas hoje`;
+    if (textoEl) textoEl.textContent = `⚠️ O preço sobe para R$97 quando atingir 100 vendas hoje`;
 
     // A cada 45-120s, +1 compra (simula vendas acontecendo)
     function novaCompra() {
@@ -187,7 +187,7 @@ const CTA_LINK = "https://gs-produtos-digitais.pay.yampi.com.br/pay/SGPQ4CF7MQ";
         barraEl.style.width = `${novo}%`;
         if (textoEl) {
           const faltam = 100 - novo;
-          textoEl.textContent = `⚠️ Faltam só ${faltam} vendas para o preço subir para R$67`;
+          textoEl.textContent = `⚠️ Faltam só ${faltam} vendas para o preço subir para R$97`;
         }
       }
       const next = (Math.random() * 75 + 45) * 1000;
