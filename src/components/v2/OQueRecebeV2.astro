@@ -1,0 +1,36 @@
+---
+const items = [
+  { icon: "📖", titulo: "História infantil curta e simbólica", desc: "Narrativa simples que a criança se identifica e quer ouvir de novo" },
+  { icon: "✝️", titulo: "Versículo bíblico fácil de memorizar", desc: "Conectado com a história, na linguagem dela" },
+  { icon: "💡", titulo: "Lição do dia com aplicação prática", desc: "O que aquele valor significa na vida REAL dela — na escola, com os amigos" },
+  { icon: "🌟", titulo: "Missão Kids", desc: "Desafio leve e divertido pra viver o que aprendeu naquele dia" },
+  { icon: "🙏", titulo: "Oração curtinha", desc: "A criança conversa com Deus sobre o que descobriu" },
+  { icon: "✏️", titulo: "Atividade rápida", desc: "Ligar pontos, completar frase, desenhar — mantém a atenção e fixa o aprendizado" },
+  { icon: "👨‍👩‍👧", titulo: "Reflexão para os pais", desc: "Uma frase poderosa pra VOCÊ absorver a lição também (muitas mães dizem que essa é a parte favorita delas)" },
+];
+---
+
+<section class="bg-cream px-5 py-10 sm:px-8 md:py-14">
+  <h2 class="mb-2 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+    Cada parábola vem completa com <span class="text-green">7 elementos</span>
+  </h2>
+  <p class="mx-auto mb-8 max-w-md text-center text-base text-brown-light sm:text-lg">
+    Diferente de outros materiais que só trazem a historinha e o versículo
+  </p>
+
+  <div class="mx-auto max-w-lg space-y-3">
+    {items.map((item, i) => (
+      <div class="flex items-start gap-3 rounded-xl bg-cream-dark px-4 py-3 sm:px-5 sm:py-4">
+        <span class="shrink-0 text-xl sm:text-2xl">{item.icon}</span>
+        <div>
+          <p class="text-base font-bold text-brown-dark sm:text-lg">
+            {i + 1}. {item.titulo}
+          </p>
+          <p class="mt-0.5 text-sm leading-relaxed text-brown-light sm:text-base">
+            {item.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

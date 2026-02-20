@@ -1,0 +1,82 @@
+---
+const CTA_LINK = "#oferta";
+
+const depoimentos = [
+  {
+    texto: "Meu filho me perguntou outro dia: \"Mãe, você sabia que tem evidência real de que Jesus ressuscitou?\" Ele tem 8 anos. Eu quase chorei. A gente faz uma parábola todo domingo e ele literalmente corre pra pegar o material. É a primeira coisa que fez teologia fazer sentido pra ele — não só decorar versículo, mas entender POR QUE a gente acredita.",
+    nome: "Fernanda M.",
+    detalhe: "Mãe do Lucas, 8 anos — São Paulo, SP",
+  },
+  {
+    texto: "Eu tinha medo de não saber ensinar isso. Mas o formato é tão simples — lê a história, conversa sobre a pergunta, faz a atividade. Na terceira semana minha filha começou a fazer as PRÓPRIAS perguntas. Ela disse pra uma amiga na escola que a gente pode saber que Deus é real \"por causa de evidência, não só sentimento\". Ela tem 7 anos.",
+    nome: "Jéssica T.",
+    detalhe: "Mãe solo — Belo Horizonte, MG",
+  },
+  {
+    texto: "A gente trocou o celular antes de dormir por isso e não esperava que fosse durar. Mas os dois meninos (6 e 10) se envolveram. O mais velho ama o formato de investigação, o mais novo gosta das atividades. O que mais me surpreendeu foram as conversas que isso gera — meu filho de 10 anos perguntou sobre sofrimento e por que Deus permite, e o material deu uma estrutura real pra gente conversar.",
+    nome: "David R.",
+    detalhe: "Pai de dois — Curitiba, PR",
+  },
+];
+---
+
+<section class="bg-cream px-5 py-10 sm:px-8 md:py-14">
+  <div class="mx-auto max-w-2xl">
+    <h2 class="mb-2 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+      ❤️ O que mães e pais estão dizendo
+    </h2>
+    <p class="mx-auto mb-8 max-w-md text-center text-base text-brown-light sm:text-lg">
+      Famílias reais, resultados reais
+    </p>
+
+    <!-- Depoimentos escritos -->
+    <div class="space-y-4">
+      {depoimentos.map((dep) => (
+        <div class="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+          <!-- Estrelas -->
+          <div class="mb-3 flex gap-0.5 text-lg">
+            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+          </div>
+          <!-- Texto -->
+          <p class="text-base leading-relaxed text-brown italic sm:text-lg">
+            "{dep.texto}"
+          </p>
+          <!-- Autor -->
+          <div class="mt-4 border-t border-cream-dark pt-3">
+            <p class="text-base font-bold text-brown-dark">{dep.nome}</p>
+            <p class="text-sm text-brown-light">{dep.detalhe}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Prints de WhatsApp existentes -->
+    <h3 class="mt-10 mb-4 text-center text-base font-bold text-brown-dark sm:text-lg">
+      E mais depoimentos no WhatsApp:
+    </h3>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div class="overflow-hidden rounded-2xl shadow-md">
+        <img src="/depoimentos/whatsapp-fernanda.png" alt="Depoimento WhatsApp - Fernanda" loading="lazy" decoding="async" class="block w-full rounded-2xl" />
+      </div>
+      <div class="overflow-hidden rounded-2xl shadow-md">
+        <img src="/depoimentos/whatsapp-marlene.png" alt="Depoimento WhatsApp - Dona Marlene" loading="lazy" decoding="async" class="block w-full rounded-2xl" />
+      </div>
+      <div class="overflow-hidden rounded-2xl shadow-md">
+        <img src="/depoimentos/whatsapp-prof_claudia.png" alt="Depoimento WhatsApp - Prof. Cláudia" loading="lazy" decoding="async" class="block w-full rounded-2xl" />
+      </div>
+      <div class="overflow-hidden rounded-2xl shadow-md">
+        <img src="/depoimentos/whatsapp-pra_renata.png" alt="Depoimento WhatsApp - Pastora Renata" loading="lazy" decoding="async" class="block w-full rounded-2xl" />
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-8 text-center">
+      <a
+        href={CTA_LINK}
+        class="inline-block w-full max-w-sm rounded-2xl bg-cta px-8 py-4 text-base font-bold text-white uppercase shadow-[0_6px_20px_rgba(37,211,102,0.4)] transition-all hover:bg-cta-dark hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] active:scale-95 sm:text-lg"
+      >
+        QUERO PLANTAR ESSA SEMENTE TAMBÉM!
+      </a>
+    </div>
+  </div>
+</section>

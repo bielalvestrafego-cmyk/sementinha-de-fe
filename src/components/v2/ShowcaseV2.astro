@@ -1,0 +1,34 @@
+---
+const fotos = [
+  { src: "https://adspro.b-cdn.net/sementinhas/showcase/1771597713708.png", alt: "Mãe e filho lendo as parábolas juntos na mesa da cozinha" },
+  { src: "https://adspro.b-cdn.net/sementinhas/showcase/1771597723011.png", alt: "Menino concentrado lendo o material no sofá" },
+  { src: "https://adspro.b-cdn.net/sementinhas/showcase/1771597730651.png", alt: "Família fazendo devocional juntos no domingo" },
+  { src: "https://adspro.b-cdn.net/sementinhas/showcase/1771597740424.png", alt: "Menina orgulhosa mostrando atividade completada" },
+];
+---
+
+<section class="bg-cream-dark px-5 py-10 sm:px-8 md:py-14">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="mb-2 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+      Veja o material na prática
+    </h2>
+    <p class="mx-auto mb-8 max-w-md text-center text-base text-brown-light sm:text-lg">
+      Famílias reais usando as Sementinhas de Fé no devocional diário
+    </p>
+
+    <!-- Grid de fotos -->
+    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+      {fotos.map((foto) => (
+        <div class="overflow-hidden rounded-2xl shadow-md">
+          <img
+            src={foto.src}
+            alt={foto.alt}
+            loading="lazy"
+            decoding="async"
+            class="block aspect-square w-full object-cover"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+---
+const perguntas = [
+  {
+    q: "É só mais historinha bíblica?",
+    a: "Não. Isso ensina seu filho a PENSAR sobre a fé, não só repetir fatos bíblicos. Enquanto outros materiais contam as mesmas 50 histórias, o Sementinhas de Fé responde as perguntas reais que seu filho vai ouvir — e que podem destruir a fé dele se ficarem sem resposta.",
+  },
+  {
+    q: "Por que a faixa de 4 a 12 anos é tão importante?",
+    a: "Entre 4 e 12 anos, a criança passa por uma mudança cognitiva — ela para de aceitar as coisas só porque o adulto falou. É nessa janela que ela forma o jeito permanente de avaliar o que é verdade. Se ela não recebe razões pra fé nessa fase, vai encontrar razões CONTRA na adolescência.",
+  },
+  {
+    q: "Meu filho já vai na escola dominical. Não basta?",
+    a: "A escola dominical ensina O QUE acreditar. Isso aqui ensina POR QUE acreditar. Mesmo crianças que vão na igreja toda semana muitas vezes não conseguem explicar por que acreditam no que acreditam. O Sementinhas preenche exatamente essa lacuna.",
+  },
+  {
+    q: "O material é físico ou digital?",
+    a: "100% digital. PDF com qualidade de impressão + Canva editável. Use no celular, imprima quantas vezes quiser, personalize com o nome da sua igreja ou ministério.",
+  },
+  {
+    q: "Como recebo o acesso?",
+    a: "Assim que o pagamento for confirmado (Pix cai na hora!), você recebe tudo direto no seu e-mail. Abre o link, baixa o material. Sem complicação.",
+  },
+  {
+    q: "Preciso entender teologia pra usar?",
+    a: "De jeito nenhum. Cada parábola já vem pronta com tudo — história, versículo, lição, atividade, oração. É só abrir e fazer junto com a criança.",
+  },
+  {
+    q: "Posso usar na igreja?",
+    a: "Sim! Muitas professoras de escola dominical já estão usando. Organizado por temas, com atividades prontas pra cada dia.",
+  },
+  {
+    q: "O acesso é vitalício?",
+    a: "Sim. Comprou uma vez, é seu pra sempre. Sem mensalidade. Atualizações futuras grátis.",
+  },
+  {
+    q: "Posso editar?",
+    a: "Sim! Versão Canva editável — muda cores, adiciona o nome da sua igreja, adapta como quiser.",
+  },
+  {
+    q: "E se eu não gostar?",
+    a: "7 dias de garantia incondicional. Se não servir, devolvemos 100% do valor. Sem perguntas, sem burocracia.",
+  },
+  {
+    q: "É seguro comprar?",
+    a: "Totalmente. Pagamento com criptografia SSL. Pix (cai na hora), cartão em até 8x, ou boleto.",
+  },
+];
+---
+
+<section class="bg-cream-dark px-5 py-10 sm:px-8 md:py-14">
+  <h2 class="mb-8 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+    🤔 Perguntas frequentes
+  </h2>
+
+  <div class="mx-auto max-w-lg space-y-3">
+    {perguntas.map((p) => (
+      <details class="group rounded-xl bg-white shadow-sm">
+        <summary class="flex cursor-pointer items-center justify-between px-5 py-4 text-base font-semibold text-brown-dark sm:text-lg">
+          <span class="pr-4">{p.q}</span>
+          <span class="shrink-0 text-lg text-brown-light transition-transform group-open:rotate-180">
+            ▼
+          </span>
+        </summary>
+        <div class="px-5 pb-4 text-base leading-relaxed text-brown-light sm:text-lg">
+          {p.a}
+        </div>
+      </details>
+    ))}
+  </div>
+</section>

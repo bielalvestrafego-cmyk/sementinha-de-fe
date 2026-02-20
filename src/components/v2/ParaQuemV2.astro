@@ -1,0 +1,49 @@
+---
+const sim = [
+  "Você é mãe, pai, avó ou avô e quer que seu filho saiba POR QUE acredita — não só O QUE acreditar",
+  "Você se preocupa que a fé dele não vai sobreviver à primeira pergunta difícil na escola ou faculdade",
+  "Você sente que a Bíblia é profunda demais pra explicar pra criança e precisa de um material que traduza na linguagem dela",
+  "Você é professora de escola dominical ou líder de ministério infantil e precisa de conteúdo pronto e organizado",
+  "Você quer criar o hábito do devocional em família mas nunca sabe por onde começar",
+];
+
+const nao = [
+  "Você acredita que fé é só sentimento e não precisa de fundamento",
+  "Você quer material teológico acadêmico avançado — este é feito com linguagem simples e carinhosa, pra crianças de 4 a 12 anos",
+  "Você não pretende dedicar nem 10 minutinhos por dia pra um momento com a criança e com Deus",
+];
+---
+
+<section class="bg-cream px-5 py-10 sm:px-8 md:py-14">
+  <div class="mx-auto max-w-2xl">
+    <!-- Para quem É -->
+    <div class="mb-8">
+      <h2 class="mb-6 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+        Este material é pra você se...
+      </h2>
+      <div class="space-y-3">
+        {sim.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl bg-green/5 p-4 sm:p-5">
+            <span class="shrink-0 text-xl text-green">✅</span>
+            <p class="text-base leading-relaxed text-brown sm:text-lg">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Para quem NÃO é -->
+    <div>
+      <h2 class="mb-6 text-center text-xl font-bold text-brown-dark sm:text-2xl md:text-3xl">
+        Este material NÃO é pra você se...
+      </h2>
+      <div class="space-y-3">
+        {nao.map((item) => (
+          <div class="flex items-start gap-3 rounded-xl bg-red-price/5 p-4 sm:p-5">
+            <span class="shrink-0 text-xl text-red-price">❌</span>
+            <p class="text-base leading-relaxed text-brown sm:text-lg">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
